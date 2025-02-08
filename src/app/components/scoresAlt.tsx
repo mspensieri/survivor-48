@@ -1,0 +1,270 @@
+"use client";
+
+import Badge from "react-bootstrap/Badge";
+import React from "react";
+
+import { Player } from "../data/players";
+import { Points } from "../data/weeks";
+import { PlayerRankings } from "../data/rankings";
+import { Team } from "../data/teams";
+import { Card, Col, Container, Row } from "react-bootstrap";
+
+const styles = {
+  badge: { width: "90px", position: "absolute", top: "10px", right: "10px" },
+  indicatorGreen: {
+    fontSize: "10pt",
+    color: "green",
+  },
+  indicatorRed: {
+    fontSize: "10pt",
+    color: "red",
+  },
+  avatar: {
+    borderRadius: "12px",
+    marginTop: "20px",
+    marginLeft: "10px",
+  },
+  name: {
+    fontSize: "25pt",
+    marginLeft: "10px",
+  },
+  units: {
+    fontSize: "10pt",
+  },
+  details: {
+    position: "absolute",
+    top: "65px",
+    left: "110px",
+  },
+  hr: {
+    margin: "10px",
+  },
+};
+
+class ScoresAlt extends React.Component<{
+  thisWeekRankings: PlayerRankings;
+  lastWeekRankings: PlayerRankings;
+  weekNumber: number;
+  teams: Array<Team>;
+}> {
+  getBadge(player: Player, weekNumber: number) {
+    if (
+      typeof player.eliminatedWeek !== "undefined" &&
+      weekNumber >= player.eliminatedWeek
+    ) {
+      if (player.status === "eliminated") {
+        return (
+          <Badge bg="danger" style={styles.badge}>
+            Eliminated
+          </Badge>
+        );
+      } else if (player.status === "jury") {
+        return (
+          <Badge bg="info" style={styles.badge}>
+            Jury
+          </Badge>
+        );
+      }
+    } else if (player.status === "winner" && weekNumber === 13) {
+      return (
+        <Badge bg="success" style={styles.badge}>
+          Winner
+        </Badge>
+      );
+    }
+
+    return (
+      <Badge bg="secondary" style={styles.badge}>
+        Active
+      </Badge>
+    );
+  }
+
+  render() {
+    const {
+      thisWeekRankings = [],
+      lastWeekRankings = [],
+      weekNumber,
+      teams,
+    } = this.props;
+
+    return (
+      <Container>
+        {...thisWeekRankings.map((thisWeekScore) => {
+          const lastWeekScore = lastWeekRankings?.find(
+            (p) => p.player === thisWeekScore.player
+          );
+
+          function getScore(scoreKey: keyof Points | "total") {
+            const thisWeekPoints =
+              (scoreKey === "total"
+                ? thisWeekScore.total
+                : thisWeekScore.points[scoreKey]) || 0;
+            const lastWeekPoints =
+              (scoreKey === "total"
+                ? lastWeekScore?.total
+                : lastWeekScore?.points[scoreKey]) || 0;
+
+            if (lastWeekScore) {
+              if (thisWeekPoints > lastWeekPoints) {
+                return (
+                  <span>
+                    {thisWeekPoints}
+                    <span style={styles.units}>pts</span>{" "}
+                    <span style={styles.indicatorGreen}>
+                      (+{thisWeekPoints - lastWeekPoints})
+                    </span>
+                  </span>
+                );
+              } else {
+                return (
+                  <span>
+                    {thisWeekPoints || "-"}
+                    <span style={styles.units}>pts</span>
+                  </span>
+                );
+              }
+            } else {
+              return (
+                <span>
+                  {thisWeekPoints || "-"}
+                  <span style={styles.units}>pts</span>
+                </span>
+              );
+            }
+          }
+
+          let rank;
+
+          if (lastWeekScore) {
+            if (thisWeekScore.rank < lastWeekScore.rank) {
+              rank = (
+                <span>
+                  #{thisWeekScore.rank + 1}{" "}
+                  <span style={styles.indicatorGreen}>
+                    (▲ {lastWeekScore.rank - thisWeekScore.rank})
+                  </span>
+                </span>
+              );
+            } else if (thisWeekScore.rank > lastWeekScore.rank) {
+              rank = (
+                <span>
+                  #{thisWeekScore.rank + 1}{" "}
+                  <span style={styles.indicatorRed}>
+                    (▼ {thisWeekScore.rank - lastWeekScore.rank})
+                  </span>
+                </span>
+              );
+            } else {
+              rank = <span>#{thisWeekScore.rank + 1}</span>;
+            }
+          } else {
+            rank = <span>#{thisWeekScore.rank + 1}</span>;
+          }
+
+          return (
+            <Row
+              key={thisWeekScore.player.name}
+              className="justify-content-center g-0"
+            >
+              <Col xs={12} lg={9} xl={8} xxl={7}>
+                <Row
+                  key={thisWeekScore.player.name}
+                  className="justify-content-center g-0"
+                >
+                  <Col xs={12} md={6}>
+                    <Card className="joined-card-left">
+                      <div>
+                        <span style={styles.name}>
+                          {thisWeekScore.player.name}
+                        </span>
+                        <hr style={styles.hr} />
+                        <img
+                          src={`stephanie.jpg`}
+                          alt={thisWeekScore.player.name}
+                          width={90}
+                          height={90}
+                          style={styles.avatar}
+                        ></img>
+                        <div style={styles.details}>
+                          <br />
+                          <strong>Rank: </strong>
+                          {rank}
+                          <br />
+                          <strong>Total: </strong> {getScore("total")}
+                          <br />
+                          <strong>Popularity: </strong>
+                          {teams.reduce((acc, curr) => {
+                            return curr.players.includes(thisWeekScore.player)
+                              ? acc + 1
+                              : acc;
+                          }, 0)}
+                          <span style={styles.units}> teams</span>
+                        </div>
+                        {this.getBadge(thisWeekScore.player, weekNumber)}
+                      </div>
+                    </Card>
+                  </Col>
+                  <Col xs={12} md={5}>
+                    <Card className="joined-card-right">
+                      <div>
+                        <Card.Body>
+                          {thisWeekScore.total! === 0 && (
+                            <>No points earned yet :(</>
+                          )}
+                          {thisWeekScore.points.teamImmunity! > 0 && (
+                            <>
+                              <strong>Immunity (team): </strong>
+                              {getScore("teamImmunity")}
+                              <br />{" "}
+                            </>
+                          )}
+                          {thisWeekScore.points.individualImmunity! > 0 && (
+                            <>
+                              <strong>Immunity (indiv.): </strong>
+                              {getScore("individualImmunity")}
+                              <br />
+                            </>
+                          )}
+                          {thisWeekScore.points.advantage! > 0 && (
+                            <>
+                              <strong>Advantage: </strong>
+                              {getScore("advantage")}
+                              <br />
+                            </>
+                          )}
+                          {thisWeekScore.points.idolFound! > 0 && (
+                            <>
+                              <strong>Idol found: </strong>
+                              {getScore("idolFound")}
+                              <br />
+                            </>
+                          )}
+                          {thisWeekScore.points.voteNullified! > 0 && (
+                            <>
+                              <strong>Idol played: </strong>
+                              {getScore("voteNullified")}
+                              <br />
+                            </>
+                          )}
+                          {thisWeekScore.points.placement! > 0 && (
+                            <>
+                              <strong>Jury placement: </strong>
+                              {getScore("placement")}
+                            </>
+                          )}
+                        </Card.Body>
+                      </div>
+                    </Card>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+          );
+        })}
+      </Container>
+    );
+  }
+}
+
+export default ScoresAlt;
