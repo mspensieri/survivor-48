@@ -6,7 +6,7 @@ import { Container } from "react-bootstrap";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Survivor Pool Season 47",
+  title: "Survivor Pool Season 48",
   description: "Outwit. Outplay. Outlast.",
 };
 

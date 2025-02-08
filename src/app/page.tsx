@@ -22,11 +22,11 @@ const playerRankings = getPlayerRankings(players);
 
 const styles = {
   spoilersButton: {
-    color: "white",
-    backgroundColor: "rgb(110, 4, 1)",
+    color: "var(--link-color)",
+    backgroundColor: "var(--background-color)",
+    border: "1px solid var(--link-color)",
     width: "200px",
     height: "50px",
-    border: "1px solid white",
     borderRadius: "25px",
     left: "50%",
     marginTop: "200px",
@@ -145,7 +145,7 @@ function UncontrolledExample() {
             height={30}
             style={{ display: "inline" }}
           ></img>
-          Survivor Pool Season 47
+          Survivor Pool Season 48
         </Navbar.Brand>
       </Navbar>
       <Tabs

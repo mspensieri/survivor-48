@@ -17,7 +17,7 @@ const styles = {
     textDecoration: "none",
   },
   selectedWeekButton: {
-    backgroundColor: "var(--link-color-dark)",
+    backgroundColor: "var(--table-accent-color)",
     color: "black",
     border: "none",
     width: "100%",

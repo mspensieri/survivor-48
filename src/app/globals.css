@@ -10,11 +10,15 @@
 /*# sourceMappingURL=bootstrap.min.css.map */
 
 :root {
-    --bs-body-bg:rgb(110, 4, 1);
-    --bs-link-color: #faece5;
-    --link-color-dark: #b0aca2;
-    --bs-tertiary-bg-rgb:rgb(110, 4, 1);
-    
+    --link-color: rgb(223, 217, 194);
+    --link-color-dark: rgb(114, 111, 86);
+    --table-accent-color: rgb(196, 192, 167);
+    --background-color: rgb(17, 25, 32);
+
+    --bs-body-bg: var(--background-color);
+    --bs-link-color: var(--link-color);
+    --bs-tertiary-bg-rgb: var(--background-color);
+
     .accordion {
         --bs-accordion-color: var(--bs-link-color);
         --bs-accordion-btn-color: var(--bs-link-color);
@@ -26,12 +30,17 @@
         --bs-accordion-btn-icon:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23faece5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
 
         --bs-accordion-btn-active-icon:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23faece5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
+
+        .btn-link {
+            --bs-link-hover-color: var(--link-color);
+            --bs-link-color: var(--link-color-dark);
+        }
     }
 
     .navbar-brand {
         padding-left: 8px;
-        --bs-navbar-brand-color: #faece5;
-        --bs-navbar-brand-hover-color: #faece5;
+        --bs-navbar-brand-color: var(--bs-link-color);
+        --bs-navbar-brand-hover-color: var(--bs-link-color);
     }
 
     .nav {
@@ -52,15 +61,13 @@
     }
 
     .table {
-        --bs-table-striped-bg: #faece5;
-
-        --bs-table-bg: #1c0e09;
-        /* --bs-table-color: #ffffff; */
-        --bs-table-accent-bg: #d7d2c6;
+        --bs-table-striped-bg: var(--bs-link-color);
+        --bs-table-bg: var(--background-color);
+        --bs-table-accent-bg: var(--table-accent-color);
     }
 
     .card {
-        --bs-card-bg: #faece5;
+        --bs-card-bg: var(--bs-link-color);
         margin-bottom: 24px;
     }
 
@@ -69,7 +76,7 @@
     }
 
     .rules {
-        color: #faece5;
+        color: var(--bs-link-color);
     }
 
     .blur {
