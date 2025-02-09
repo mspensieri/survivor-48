@@ -144,7 +144,12 @@ function Page() {
 
   return (
     <Row>
-      <img src="logo.webp" alt="survivor logo" style={styles.logo}></img>
+      <img
+        src="logo.webp"
+        alt="survivor logo"
+        className="logo"
+        style={styles.logo}
+      ></img>
       <Navbar className="bg-body-tertiary">
         <Navbar.Brand>
           <img

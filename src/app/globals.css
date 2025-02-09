@@ -118,6 +118,12 @@
         padding-top: 6px;
     }
 
+    @media (max-width: 510px) {
+        .logo {
+            display: none;
+        }
+    }
+
     @media (max-width: 768px) {
         .joined-card-left {
             border-bottom-right-radius: 0px;
