@@ -52,6 +52,7 @@ class WeekSelectorAccordion extends React.Component<
     return (
       <Accordion
         activeKey={this.state.activeKey}
+        className="week-selector-accordion"
         onClick={() => {
           if (this.state.activeKey) {
             this.setState({ activeKey: null });

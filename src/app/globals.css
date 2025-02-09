@@ -18,8 +18,9 @@
     --bs-body-bg: var(--background-color);
     --bs-link-color: var(--link-color);
     --bs-tertiary-bg-rgb: var(--background-color);
+    --bs-card-spacer-y: 10px;
 
-    .accordion {
+    .accordion.week-selector-accordion {
         --bs-accordion-color: var(--bs-link-color);
         --bs-accordion-btn-color: var(--bs-link-color);
         --bs-accordion-active-color: var(--bs-link-color);
@@ -34,6 +35,27 @@
         .btn-link {
             --bs-link-hover-color: var(--link-color);
             --bs-link-color: var(--link-color-dark);
+        }
+    }
+    .accordion.player-details-accordion {
+        --bs-accordion-active-color: var(--bs-body-color);
+        --bs-accordion-active-bg: var(--bs-link-color);
+        --bs-accordion-transition-color: var(--bs-body-color);
+        --bs-accordion-btn-focus-box-shadow: none;
+        --bs-accordion-btn-bg: var(--bs-link-color);
+        --bs-accordion-bg: var(--bs-link-color);
+
+        .accordion-button {
+            font-size: '12px';
+            padding: 10px;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        
+        .accordion-body {
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
         }
     }
 
@@ -90,6 +112,10 @@
         --bs-link-hover-color: var(--link-color-dark);
     }
 
+    div.joined-card-left {
+        padding-top: 6px;
+    }
+
     @media (max-width: 768px) {
         .joined-card-left {
             border-bottom-right-radius: 0px;
@@ -117,5 +143,9 @@
             border-left: 0px;
             min-height: 190px;
         }
+    }
+
+    .card {
+        --bs-card-spacer-y: 10px;
     }
 }

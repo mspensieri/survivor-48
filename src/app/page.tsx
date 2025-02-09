@@ -15,7 +15,6 @@ import Teams from "./components/teams";
 import Scores from "./components/scores";
 import Rules from "./components/rules";
 import WeekSelectorAccordion from "./components/weekSelectorAccordion";
-import ScoresAlt from "./components/scoresAlt";
 
 const currentWeek = weeks.length;
 const teamRankings = getTeamRankings(teams);
@@ -100,6 +99,7 @@ function Page() {
             lastWeekRankings={getPlayerRankings(players)[0]}
             weekNumber={0}
             teams={teams}
+            isSmallScreen={isSmallScreen}
           ></Scores>
         </SpoilerMask>
       );
@@ -110,31 +110,8 @@ function Page() {
           lastWeekRankings={playerRankings[weekNumber - 1]}
           weekNumber={weekNumber}
           teams={teams}
+          isSmallScreen={isSmallScreen}
         ></Scores>
-      );
-    }
-  }
-
-  function generateAltPlayerScoresForWeek(weekNumber: number) {
-    if (!reveal && weekNumber === currentWeek - 1) {
-      return (
-        <SpoilerMask>
-          <ScoresAlt
-            thisWeekRankings={getPlayerRankings(players)[0]}
-            lastWeekRankings={getPlayerRankings(players)[0]}
-            weekNumber={0}
-            teams={teams}
-          ></ScoresAlt>
-        </SpoilerMask>
-      );
-    } else {
-      return (
-        <ScoresAlt
-          thisWeekRankings={playerRankings[weekNumber]}
-          lastWeekRankings={playerRankings[weekNumber - 1]}
-          weekNumber={weekNumber}
-          teams={teams}
-        ></ScoresAlt>
       );
     }
   }
@@ -245,40 +222,6 @@ function Page() {
                     disabled={disabled}
                   >
                     {generatePlayerScoresForWeek(weekNumber)}
-                  </Tab>
-                );
-              })}
-            </Tabs>
-          )}
-        </Tab>
-        <Tab eventKey="players2" title="Players (Alt)">
-          {isSmallScreen ? (
-            <div>
-              <WeekSelectorAccordion
-                selectedWeek={selectedWeek}
-                setSelectedWeek={setSelectedWeek}
-                currentWeek={currentWeek}
-              ></WeekSelectorAccordion>
-              {generateAltPlayerScoresForWeek(selectedWeek)}
-            </div>
-          ) : (
-            <Tabs
-              activeKey={`${selectedWeek + 1}`}
-              onSelect={(k) => setSelectedWeek(Number(k) - 1)}
-              id="week-selector-players"
-              className="mb-3"
-            >
-              {[...Array(14)].map((_, index) => {
-                const weekNumber = index;
-                const disabled = currentWeek < weekNumber + 1;
-                return (
-                  <Tab
-                    key={weekNumber}
-                    eventKey={weekNumber + 1}
-                    title={airDates[weekNumber]}
-                    disabled={disabled}
-                  >
-                    {generateAltPlayerScoresForWeek(weekNumber)}
                   </Tab>
                 );
               })}
