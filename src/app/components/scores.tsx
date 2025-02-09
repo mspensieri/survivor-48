@@ -126,7 +126,7 @@ class Scores extends React.Component<{
               } else {
                 return (
                   <span>
-                    {thisWeekPoints || "-"}
+                    {thisWeekPoints}
                     <span style={styles.units}>pts</span>{" "}
                     <span style={styles.indicatorNeutral}>(-)</span>
                   </span>
@@ -135,7 +135,7 @@ class Scores extends React.Component<{
             } else {
               return (
                 <span>
-                  {thisWeekPoints || "-"}
+                  {thisWeekPoints}
                   <span style={styles.units}>pts</span>
                 </span>
               );
@@ -240,7 +240,7 @@ class Scores extends React.Component<{
                         </span>
                         <hr style={styles.hr} />
                         <img
-                          src={`stephanie.jpg`}
+                          src={`${thisWeekScore.player.name.toLowerCase()}.jpg`}
                           alt={thisWeekScore.player.name}
                           width={90}
                           height={90}
