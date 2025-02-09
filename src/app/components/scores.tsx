@@ -44,6 +44,29 @@ const styles: Record<string, React.CSSProperties> = {
     marginTop: "4px",
     marginBottom: "10px",
   },
+  leftCard: {
+    borderTopRightRadius: "0px",
+    borderBottomRightRadius: "0px",
+    minHeight: "215px",
+  },
+  leftCardSmall: {
+    borderBottomRightRadius: "0px",
+    borderBottomLeftRadius: "0px",
+    marginBottom: "0px",
+    minHeight: "215px",
+  },
+  rightCard: {
+    borderTopLeftRadius: "0px",
+    borderBottomLeftRadius: "0px",
+    borderLeft: "0px",
+    minHeight: "215px",
+  },
+  rightCardSmall: {
+    borderTopRightRadius: "0px",
+    borderTopLeftRadius: "0px",
+    borderTop: "0px",
+    marginTop: "0px",
+  },
 };
 
 class Scores extends React.Component<{
@@ -52,6 +75,7 @@ class Scores extends React.Component<{
   weekNumber: number;
   teams: Array<Team>;
   isSmallScreen: boolean;
+  screenWidth: number;
 }> {
   getBadge(player: Player, weekNumber: number) {
     if (
@@ -93,6 +117,7 @@ class Scores extends React.Component<{
       weekNumber,
       teams,
       isSmallScreen,
+      screenWidth,
     } = this.props;
 
     return (
@@ -247,7 +272,13 @@ class Scores extends React.Component<{
               <Col xs={12} lg={9} xl={8} xxl={7}>
                 <Row className="justify-content-center gx-0">
                   <Col xs={12} md={6}>
-                    <Card className="joined-card-left">
+                    <Card
+                      style={
+                        screenWidth < 768
+                          ? styles.leftCardSmall
+                          : styles.leftCard
+                      }
+                    >
                       <div>
                         <span style={styles.name}>
                           {thisWeekScore.player.name}
@@ -280,7 +311,13 @@ class Scores extends React.Component<{
                     </Card>
                   </Col>
                   <Col xs={12} md={5}>
-                    <Card className="joined-card-right">
+                    <Card
+                      style={
+                        screenWidth < 768
+                          ? styles.rightCardSmall
+                          : styles.rightCard
+                      }
+                    >
                       <div>
                         <Card.Body>
                           {isSmallScreen ? (

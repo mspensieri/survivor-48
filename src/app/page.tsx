@@ -41,17 +41,25 @@ const styles: Record<string, React.CSSProperties> = {
     margin: "auto",
     left: 320,
   },
+  logoSmall: {
+    display: "none",
+  },
 };
 
 function Page() {
   const [reveal, setReveal] = useState(true);
   const [isSmallScreen, setIsSmallScreen] = useState(true);
+  const [screenWidth, setScreenWidth] = useState(0);
   const [selectedWeek, setSelectedWeek] = useState(currentWeek - 1);
 
   useEffect(() => {
     setIsSmallScreen(global.window.innerWidth < 768);
+    setScreenWidth(global.window.innerWidth);
 
-    const handleResize = () => setIsSmallScreen(global.window.innerWidth < 768);
+    const handleResize = () => {
+      setIsSmallScreen(global.window.innerWidth < 768);
+      setScreenWidth(global.window.innerWidth);
+    };
 
     global.window.addEventListener("resize", handleResize);
   }, []);
@@ -106,6 +114,7 @@ function Page() {
             weekNumber={0}
             teams={teams}
             isSmallScreen={isSmallScreen}
+            screenWidth={screenWidth}
           ></Scores>
         </SpoilerMask>
       );
@@ -117,6 +126,7 @@ function Page() {
           weekNumber={weekNumber}
           teams={teams}
           isSmallScreen={isSmallScreen}
+          screenWidth={screenWidth}
         ></Scores>
       );
     }
@@ -148,7 +158,10 @@ function Page() {
         src="logo.webp"
         alt="survivor logo"
         className="logo"
-        style={styles.logo}
+        style={{
+          ...styles.logo,
+          ...(screenWidth < 510 ? styles.logoSmall : {}),
+        }}
       ></img>
       <Navbar className="bg-body-tertiary">
         <Navbar.Brand>

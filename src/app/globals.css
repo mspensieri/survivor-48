@@ -118,41 +118,6 @@
         padding-top: 6px;
     }
 
-    @media (max-width: 510px) {
-        .logo {
-            display: none;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .joined-card-left {
-            border-bottom-right-radius: 0px;
-            border-bottom-left-radius: 0px;
-            margin-bottom: 0px;
-            min-height: 215px;
-        }
-        .joined-card-right {
-            border-top-right-radius: 0px;
-            border-top-left-radius: 0px;
-            border-top: 0px;
-            margin-top: 0px;
-        }
-    }
-
-    @media (min-width: 768px) {
-        .joined-card-left {
-            border-top-right-radius: 0px;
-            border-bottom-right-radius: 0px;
-            min-height: 215px;
-        }
-        .joined-card-right {
-            border-top-left-radius: 0px;
-            border-bottom-left-radius: 0px;
-            border-left: 0px;
-            min-height: 215px;
-        }
-    }
-
     .card {
         --bs-card-spacer-y: 10px;
     }
