@@ -20,7 +20,7 @@ const currentWeek = weeks.length;
 const teamRankings = getTeamRankings(teams);
 const playerRankings = getPlayerRankings(players);
 
-const styles = {
+const styles: Record<string, React.CSSProperties> = {
   spoilersButton: {
     color: "var(--link-color)",
     backgroundColor: "var(--background-color)",
