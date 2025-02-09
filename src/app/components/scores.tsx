@@ -9,7 +9,7 @@ import { PlayerRankings } from "../data/rankings";
 import { Team } from "../data/teams";
 import { Accordion, Card, Col, Container, Row } from "react-bootstrap";
 
-const styles = {
+const styles: Record<string, React.CSSProperties> = {
   badge: { width: "90px", position: "absolute", top: "16px", right: "16px" },
   indicatorGreen: {
     fontSize: "10pt",
