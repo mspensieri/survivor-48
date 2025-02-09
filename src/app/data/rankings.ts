@@ -69,6 +69,8 @@ function getWeeklyPlayerRankings(
         player,
         total: computePlayerScore(player, weekNumber, "total"),
         points: {
+          survival: computePlayerScore(player, weekNumber, "survival"),
+          votes: computePlayerScore(player, weekNumber, "votes"),
           teamImmunity: computePlayerScore(player, weekNumber, "teamImmunity"),
           individualImmunity: computePlayerScore(
             player,

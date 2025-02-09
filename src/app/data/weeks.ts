@@ -7,6 +7,8 @@ export type Points = {
   idolFound?: number;
   voteNullified?: number;
   placement?: number;
+  survival?: number;
+  votes?: number;
 };
 
 export const airDates = [
@@ -28,37 +30,47 @@ export const airDates = [
 
 export const weeks: Array<Partial<Record<PlayerKeys, Points>>> = [
   {
-    STEPHANIE: { teamImmunity: 1 },
-    SHAUHIN: { teamImmunity: 1 },
-    EVA: { teamImmunity: 1 },
-    MITCH: { teamImmunity: 1, advantage: 1 },
-    SAI: { teamImmunity: 1 },
-    JOE: { teamImmunity: 1 },
-    KAMILLA: { teamImmunity: 1 },
+    STEPHANIE: { teamImmunity: 1, survival: 2, votes: 1 },
+    SHAUHIN: { teamImmunity: 1, survival: 2, votes: 1 },
+    EVA: { teamImmunity: 1, survival: 2, votes: 1 },
+    MITCH: { teamImmunity: 1, advantage: 1, survival: 2, votes: 1 },
+    SAI: { teamImmunity: 1, survival: 2, votes: 1 },
+    JOE: { teamImmunity: 1, survival: 2, votes: 1 },
+    KAMILLA: { teamImmunity: 1, survival: 2, votes: 1 },
     DAVID: {
       advantage: 2,
       idolFound: 2,
       teamImmunity: 1,
+      survival: 2,
+      votes: 1,
     },
-    KYLE: { teamImmunity: 1 },
-    THOMAS: { teamImmunity: 1 },
-    KEVIN: { teamImmunity: 1 },
-    CEDREK: { teamImmunity: 1 },
+    KYLE: { teamImmunity: 1, survival: 2, votes: 1 },
+    THOMAS: { teamImmunity: 1, survival: 2, votes: 1 },
+    KEVIN: { teamImmunity: 1, survival: 2, votes: 1 },
+    CEDREK: { teamImmunity: 1, survival: 2, votes: 1 },
   },
   {
-    CHARITY: { teamImmunity: 1 },
-    JUSTIN: { teamImmunity: 1 },
-    BIANCA: { teamImmunity: 1 },
-    CHRISSY: { teamImmunity: 1, advantage: 1, idolFound: 2 },
-    STAR: { teamImmunity: 1 },
-    STEPHANIE: { teamImmunity: 1 },
-    SHAUHIN: { teamImmunity: 1 },
+    CHARITY: { teamImmunity: 1, survival: 2, votes: 1 },
+    JUSTIN: { teamImmunity: 1, survival: 2, votes: 1 },
+    BIANCA: { teamImmunity: 1, survival: 2, votes: 1 },
+    CHRISSY: {
+      teamImmunity: 1,
+      advantage: 1,
+      idolFound: 2,
+      survival: 2,
+      votes: 1,
+    },
+    STAR: { teamImmunity: 1, survival: 2, votes: 1 },
+    STEPHANIE: { teamImmunity: 1, survival: 2, votes: 1 },
+    SHAUHIN: { teamImmunity: 1, survival: 2, votes: 1 },
     EVA: {
       teamImmunity: 1,
+      survival: 2,
+      votes: 1,
     },
-    MITCH: { teamImmunity: 1, idolFound: 2 },
-    SAI: { teamImmunity: 1 },
-    JOE: { teamImmunity: 1 },
+    MITCH: { teamImmunity: 1, idolFound: 2, survival: 2, votes: 1 },
+    SAI: { teamImmunity: 1, survival: 2, votes: 1 },
+    JOE: { teamImmunity: 1, survival: 2, votes: 1 },
   },
   {
     CHARITY: { teamImmunity: 1 },
@@ -126,7 +138,7 @@ export const weeks: Array<Partial<Record<PlayerKeys, Points>>> = [
   },
   {
     KYLE: { placement: 2 },
-    BIANCA: { advantage: 1, individualImmunity: 2 },
+    BIANCA: { individualImmunity: 2 },
   },
   {
     BIANCA: { individualImmunity: 2 },
@@ -155,6 +167,8 @@ export function computePlayerScore(
   for (const week of weeks.slice(0, weekNumber + 1)) {
     if (scoreKey === "total") {
       score +=
+        (week[player.key]?.survival || 0) +
+        (week[player.key]?.votes || 0) +
         (week[player.key]?.teamImmunity || 0) +
         (week[player.key]?.individualImmunity || 0) +
         (week[player.key]?.advantage || 0) +

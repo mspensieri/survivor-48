@@ -180,6 +180,20 @@ class Scores extends React.Component<{
             return (
               <>
                 {thisWeekScore.total! === 0 && <>No points earned yet :(</>}
+                {thisWeekScore.points.survival! > 0 && (
+                  <>
+                    <strong>Days survived: </strong>
+                    {getScore("survival")}
+                    <br />{" "}
+                  </>
+                )}
+                {thisWeekScore.points.votes! > 0 && (
+                  <>
+                    <strong>Correct votes: </strong>
+                    {getScore("votes")}
+                    <br />{" "}
+                  </>
+                )}
                 {thisWeekScore.points.teamImmunity! > 0 && (
                   <>
                     <strong>Immunity (team): </strong>
