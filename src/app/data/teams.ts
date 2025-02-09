@@ -42,8 +42,8 @@ export const teams: Array<Team> = [
     players: [KAMILLA, BIANCA, EVA, CHRISSY, SAI, CEDREK],
   },
   {
-    name: "SCEDREK's Spynest",
-    captain: "SCEDREK",
+    name: "Sandy's Spynest",
+    captain: "Sandy",
     accolades: {
       second: [46],
     },
@@ -216,7 +216,7 @@ export const teams: Array<Team> = [
   },
   {
     name: "Ogatally Devotes",
-    captain: "CEDREK & Lally",
+    captain: "Andy & Lally",
     winner: KEVIN,
     players: [KEVIN, DAVID, EVA, CEDREK, STEPHANIE, CHARITY],
   },

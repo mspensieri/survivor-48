@@ -24,7 +24,7 @@ const styles: Record<string, React.CSSProperties> = {
   },
   avatar: {
     borderRadius: "12px",
-    marginTop: "20px",
+    marginTop: "10px",
     marginLeft: "16px",
   },
   name: {
