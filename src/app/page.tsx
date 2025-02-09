@@ -35,6 +35,12 @@ const styles = {
     position: "absolute",
     zIndex: 10,
   },
+  logo: {
+    position: "absolute",
+    width: "180px",
+    margin: "auto",
+    left: 320,
+  },
 };
 
 function Page() {
@@ -138,6 +144,7 @@ function Page() {
 
   return (
     <Row>
+      <img src="logo.webp" alt="survivor logo" style={styles.logo}></img>
       <Navbar className="bg-body-tertiary">
         <Navbar.Brand>
           <img
