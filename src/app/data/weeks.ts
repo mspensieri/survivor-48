@@ -138,7 +138,7 @@ export const weeks: Array<Partial<Record<PlayerKeys, Points>>> = [
   },
   {
     KYLE: { placement: 2 },
-    BIANCA: { individualImmunity: 2 },
+    BIANCA: { advantage: 1, individualImmunity: 2 },
   },
   {
     BIANCA: { individualImmunity: 2 },

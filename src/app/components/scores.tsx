@@ -36,8 +36,8 @@ const styles = {
   },
   details: {
     position: "absolute",
-    top: "65px",
-    left: "116px",
+    top: "78px",
+    left: "145px",
   },
   hr: {
     margin: "16px",
@@ -256,8 +256,8 @@ class Scores extends React.Component<{
                         <img
                           src={`${thisWeekScore.player.name.toLowerCase()}.jpg`}
                           alt={thisWeekScore.player.name}
-                          width={90}
-                          height={90}
+                          width={115}
+                          height={115}
                           style={styles.avatar}
                         ></img>
                         <div style={styles.details}>
