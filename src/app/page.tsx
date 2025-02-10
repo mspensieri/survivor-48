@@ -77,7 +77,7 @@ function Page() {
 
   function SpoilerMask({ children }: { children: React.ReactNode }) {
     return (
-      <div>
+      <div className="blur-container">
         <SpoilersButton></SpoilersButton>
         <div className="blur">{children}</div>
       </div>

@@ -108,11 +108,15 @@
         color: var(--bs-link-color);
     }
 
+    .blur-container {
+        position: relative;
+    }
+
     .blur {
         position: absolute;
         width: 100%;
         height: 100%;
-        backdrop-filter: blur(2px);
+        filter: blur(8px);
     }
 
     .btn-link {
