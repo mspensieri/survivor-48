@@ -47,9 +47,9 @@ const styles: Record<string, React.CSSProperties> = {
 };
 
 function Page() {
-  const [reveal, setReveal] = useState(true);
+  const [reveal, setReveal] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(true);
-  const [screenWidth, setScreenWidth] = useState(0);
+  const [screenWidth, setScreenWidth] = useState(-1);
   const [selectedWeek, setSelectedWeek] = useState(currentWeek - 1);
 
   useEffect(() => {
@@ -150,6 +150,10 @@ function Page() {
         </SpoilerMask>
       );
     }
+  }
+
+  if (screenWidth < 0) {
+    return <div></div>;
   }
 
   return (
