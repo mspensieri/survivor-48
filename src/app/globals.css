@@ -50,6 +50,7 @@
         --bs-accordion-btn-focus-box-shadow: none;
         --bs-accordion-btn-bg: var(--bs-link-color);
         --bs-accordion-bg: var(--bs-link-color);
+        --bs-accordion-border-color: var(--bs-link-color);
 
         .accordion-button {
             font-size: '12px';
