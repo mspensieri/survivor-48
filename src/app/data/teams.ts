@@ -330,28 +330,6 @@ export const teams: Array<Team> = [
   },
 ];
 
-console.log(
-  teams.reduce(
-    (acc, team) => {
-      acc[
-        team.players
-          .map((p) => p.name)
-          .sort()
-          .join(",")
-      ] =
-        (acc[
-          team.players
-            .map((p) => p.name)
-            .sort()
-            .join(",")
-        ] || 0) + 1;
-      return acc;
-    },
-
-    {}
-  )
-);
-
 export function computeTeamScore(team: Team, weekNumber: number) {
   let score = 0;
 
