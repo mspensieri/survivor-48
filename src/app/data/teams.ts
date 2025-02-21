@@ -36,272 +36,321 @@ const {
 
 export const teams: Array<Team> = [
   {
-    name: "First Time in Fiji",
-    captain: "Mike",
-    winner: KAMILLA,
-    players: [KAMILLA, BIANCA, EVA, CHRISSY, SAI, CEDREK],
-  },
-  {
-    name: "Sandy's Spynest",
-    captain: "Sandy",
-    accolades: {
-      second: [46],
-    },
-    winner: KYLE,
-    players: [KYLE, SAI, STAR, JOE, CHRISSY, STEPHANIE],
-  },
-  {
-    name: "4blackcats",
-    captain: "Carrie",
-    winner: SHAUHIN,
-    players: [SHAUHIN, JOE, CHARITY, STAR, MARY, KYLE],
-  },
-  {
-    name: "Leafs Nation",
-    captain: "Sean",
-    accolades: {
-      third: [46],
-    },
-    winner: SHAUHIN,
-    players: [SHAUHIN, BIANCA, MARY, KYLE, STAR, CEDREK],
-  },
-  {
-    name: "Wendy's Chickens",
     captain: "Alex",
-    winner: JOE,
-    players: [JOE, SAI, MARY, JUSTIN, DAVID, CEDREK],
+    name: "Wendy's Chickens",
+    players: [MITCH, EVA, KYLE, JOE, STAR, MARY],
+    winner: MITCH,
   },
   {
-    name: "Dean's T and A Team",
-    captain: "Dean",
-    accolades: {
-      first: [44],
-      third: [45],
-    },
-    winner: CHRISSY,
-    players: [CHRISSY, CHARITY, EVA, CEDREK, SAI, STEPHANIE],
-  },
-  {
-    name: "Charlie's Angels",
     captain: "Kara",
-    winner: CEDREK,
-    players: [CEDREK, MARY, SHAUHIN, MITCH, DAVID, CHRISSY],
+    name: "Here's Your Headstone",
+    players: [MARY, JOE, CHRISSY, MITCH, THOMAS, SAI],
+    winner: MARY,
   },
   {
-    name: "Jeff's Dimples",
-    captain: "Kevin",
-    winner: CEDREK,
-    players: [CEDREK, JOE, CHRISSY, MARY, EVA, CHARITY],
+    captain: "Joanne",
+    name: "TEAM JO",
+    accolades: {
+      third: [47],
+    },
+    players: [SHAUHIN, MITCH, EVA, JOE, JUSTIN, KEVIN],
+    winner: SHAUHIN,
   },
   {
-    name: "Truth Kamikazee",
+    captain: "Renee",
+    name: "Renee's Pack",
+    players: [JOE, MITCH, KYLE, SHAUHIN, MARY, CHRISSY],
+    winner: JOE,
+  },
+  {
+    captain: "Spen",
+    name: "Come On In Guys",
+    players: [EVA, CHRISSY, KYLE, JUSTIN, CHARITY, BIANCA],
+    winner: EVA,
+  },
+  {
+    captain: "Andrea and Susan",
+    name: "Fresh Japow",
+    players: [JUSTIN, EVA, MARY, SHAUHIN, KYLE, JOE],
+    winner: JUSTIN,
+  },
+  {
+    captain: "Diego",
+    name: "Operation Italy",
+    players: [JUSTIN, EVA, SHAUHIN, KYLE, MITCH, STEPHANIE],
+    winner: JUSTIN,
+  },
+  {
+    captain: "Elizabeth",
+    name: "Play Your Idol",
+    players: [MARY, KAMILLA, CHRISSY, MITCH, KEVIN, SHAUHIN],
+    winner: MARY,
+  },
+  {
+    captain: "Mikey",
+    name: "First Time in Fiji",
+    players: [THOMAS, KYLE, EVA, JUSTIN, CHARITY, STEPHANIE],
+    winner: THOMAS,
+  },
+  {
+    captain: "Alec",
+    name: "The Ghost of Andy",
+    players: [KYLE, SHAUHIN, JOE, CHRISSY, KEVIN, MARY],
+    winner: KYLE,
+  },
+  {
+    captain: "Leila",
+    name: "Got Nothin' For Ya",
+    players: [CHRISSY, THOMAS, SHAUHIN, MITCH, EVA, CEDREK],
+    winner: CHRISSY,
+  },
+  {
     captain: "Katie",
+    name: "Truth Kamikazee",
     accolades: {
       second: [45],
     },
-    winner: STEPHANIE,
-    players: [STEPHANIE, MITCH, KEVIN, KYLE, CHRISSY, MARY],
+    players: [MITCH, KEVIN, THOMAS, JOE, SAI, EVA],
+    winner: MITCH,
   },
   {
-    name: "Muscle Mania",
-    captain: "Frank",
-    winner: CHRISSY,
-    players: [CHRISSY, CEDREK, BIANCA, CHARITY, KEVIN, KAMILLA],
+    captain: "Danny",
+    name: "pioppi (all lower case)",
+    players: [SHAUHIN, CHRISSY, JUSTIN, CHARITY, KEVIN, MITCH],
+    winner: SHAUHIN,
   },
   {
-    name: "Mermaid Dragon",
+    captain: "Stanley",
+    name: "UNDERDOGS",
+    accolades: {
+      second: [44],
+    },
+    players: [STAR, DAVID],
+    winner: STAR,
+  },
+  {
+    captain: "Ryan Lemay",
+    name: "Q's 6",
+    accolades: {
+      first: [47],
+    },
+    players: [KAMILLA, CEDREK, STEPHANIE, KYLE, EVA, THOMAS],
+    winner: KAMILLA,
+  },
+  {
+    captain: "Sandy",
+    name: "Sandy's Spynest",
+    accolades: {
+      second: [46],
+    },
+    players: [SHAUHIN, CHRISSY, MARY, MITCH, EVA, BIANCA],
+    winner: SHAUHIN,
+  },
+  {
     captain: "Colleen",
-    winner: THOMAS,
-    players: [THOMAS, SHAUHIN, KYLE, EVA, KAMILLA, CEDREK],
+    name: "Team Scrappy",
+    players: [SHAUHIN, THOMAS, KYLE, CHRISSY, CHARITY, EVA],
+    winner: SHAUHIN,
   },
   {
-    name: "Fiji Kokoda",
+    captain: "Brendan",
+    name: "NOT PENNYS BOAT",
+    accolades: {
+      third: [45],
+    },
+    players: [MARY, JOE, SHAUHIN, EVA, KAMILLA, CHARITY],
+    winner: MARY,
+  },
+  {
+    captain: "Kevin",
+    name: "Jeff's Dimples",
+    players: [KEVIN, KYLE, CHRISSY, EVA, MITCH, CHARITY],
+    winner: KEVIN,
+  },
+  {
+    captain: "Carrie",
+    name: "4blackcats",
+    players: [STEPHANIE, KYLE, EVA, SHAUHIN, JUSTIN, MARY],
+    winner: STEPHANIE,
+  },
+  {
+    captain: "Sean",
+    name: "Leafs Nation",
+    accolades: {
+      third: [46],
+    },
+    players: [STEPHANIE, EVA, SHAUHIN, JOE, CHARITY, BIANCA],
+    winner: STEPHANIE,
+  },
+  {
+    captain: "Kelly",
+    name: "Outwit, Outlast, OutSLAY",
+    players: [THOMAS, KYLE, EVA, KAMILLA, CHARITY, JOE],
+    winner: THOMAS,
+  },
+  {
+    captain: "Sarah",
+    name: "Voldemort",
+    players: [KEVIN, EVA, BIANCA, JOE, MITCH, MARY],
+    winner: KEVIN,
+  },
+  {
+    captain: "Frank",
+    name: "Muscle Mania",
+    players: [JOE, DAVID, CHRISSY, STAR, MARY, KEVIN],
+    winner: JOE,
+  },
+  {
+    captain: "Glaser",
+    name: "Cheeseburger (with bacon)",
+    players: [MARY, EVA, JOE, KEVIN, KYLE, STEPHANIE],
+    winner: MARY,
+  },
+  {
+    captain: "Thomas",
+    name: "Chicken Dinner",
+    players: [CHRISSY, SHAUHIN, KYLE, SAI, JOE, CHARITY],
+    winner: CHRISSY,
+  },
+  {
+    captain: "Vanesa",
+    name: "Latte to the Party",
+    players: [KYLE, EVA, DAVID, JOE, STEPHANIE, KAMILLA],
+    winner: KYLE,
+  },
+  {
+    captain: "Erick",
+    name: "Did I Stutter?",
+    accolades: {
+      second: [47],
+    },
+    players: [MITCH, THOMAS, BIANCA, MARY, CEDREK, JUSTIN],
+    winner: MITCH,
+  },
+  {
+    captain: "Andrea Roulet",
+    name: "Here For Friendship",
+    players: [KAMILLA, BIANCA, CHARITY, MARY, EVA, JOE],
+    winner: KAMILLA,
+  },
+  {
+    captain: "Menard",
+    name: "Fight or Flight",
+    players: [CHARITY, JUSTIN, STEPHANIE, EVA, KYLE, CHRISSY],
+    winner: CHARITY,
+  },
+  {
+    captain: "Leigh",
+    name: "LIVIN'",
+    players: [KYLE, CHARITY, KEVIN, THOMAS, JOE, EVA],
+    winner: KYLE,
+  },
+  {
+    captain: "Elana",
+    name: "Papaya?",
+    players: [MARY, JOE, BIANCA, CHRISSY, STAR, THOMAS],
+    winner: MARY,
+  },
+  {
+    captain: "Alyssa and Adam",
+    name: "AA Tribe",
+    players: [JUSTIN, MARY, CHRISSY, JOE, KYLE, EVA],
+    winner: JUSTIN,
+  },
+  {
     captain: "Greg",
+    name: "Fiji Kokoda",
     accolades: {
       first: [46],
       second: [44],
     },
-    winner: MARY,
-    players: [MARY, STAR, DAVID, KAMILLA, KEVIN, SHAUHIN],
-  },
-  {
-    name: "Totally Oswald",
-    captain: "Meagan",
-    winner: BIANCA,
-    players: [BIANCA, MARY, SHAUHIN, KEVIN, KAMILLA, EVA],
-  },
-  {
-    name: "Frank has Foot Fungus",
-    captain: "Erick",
+    players: [MITCH, CEDREK, EVA, CHARITY, BIANCA, DAVID],
     winner: MITCH,
-    players: [MITCH, EVA, KAMILLA, CHRISSY, KEVIN, MARY],
   },
   {
-    name: "Jeff's Six Pack",
-    captain: "Alec",
-    winner: CEDREK,
-    players: [CEDREK, THOMAS, SHAUHIN, MARY, KYLE, KAMILLA],
+    captain: "Andrew and Lally",
+    name: "Ogatally Devotes",
+    players: [SHAUHIN, STAR, JUSTIN, CEDREK, MARY, SAI],
+    winner: SHAUHIN,
   },
   {
-    name: "Here for Friendship",
-    captain: "Andrea R",
-    winner: MARY,
-    players: [MARY, THOMAS, DAVID, JUSTIN, CHARITY, CHRISSY],
+    captain: "Jacob",
+    name: "With You 100%",
+    players: [CHRISSY, JOE, SHAUHIN, JUSTIN, MARY, STEPHANIE],
+    winner: CHRISSY,
   },
   {
-    name: "TEAM JO",
-    captain: "Joanne",
-    winner: JOE,
-    players: [JOE, KEVIN, SHAUHIN, MITCH, KAMILLA, CHARITY],
+    captain: "Jacklyn",
+    name: "JSpenny",
+    players: [KEVIN, JOE, MITCH, BIANCA, SAI, STAR],
+    winner: KEVIN,
   },
   {
-    name: "UNDERDOGS",
-    captain: "Stan",
+    captain: "Sab and Bruno",
+    name: "Bing and Bugz",
+    players: [SHAUHIN, BIANCA, CHARITY, JOE, SAI, EVA],
+    winner: SHAUHIN,
+  },
+  {
+    captain: "Meagan",
+    name: "Totally Oswald",
+    players: [JUSTIN, JOE, MITCH, CHRISSY, BIANCA, CHARITY],
+    winner: JUSTIN,
+  },
+  {
+    captain: "Taylor",
+    name: "Clyde's Castaways",
+    players: [SHAUHIN, MARY, JUSTIN, JOE, SAI, KYLE],
+    winner: SHAUHIN,
+  },
+  {
+    captain: "Dan and Dana",
+    name: "Boinko and Ducky 4ever",
+    players: [SAI, BIANCA, STAR, DAVID, KAMILLA, CEDREK],
+    winner: SAI,
+  },
+  {
+    captain: "Dean",
+    name: "Dean's Late Team",
     accolades: {
-      second: [44],
+      first: [44],
+      third: [45],
     },
-    winner: THOMAS,
-    players: [THOMAS, JUSTIN, DAVID, STEPHANIE, KEVIN, SAI],
+    players: [],
+    winner: SAI,
   },
   {
-    name: "Challenge Beasts",
     captain: "Anne",
+    name: "Challenge Beasts",
     accolades: {
       first: [45],
     },
-    winner: MARY,
-    players: [MARY, KEVIN, CEDREK, CHRISSY, SAI, EVA],
-  },
-  {
-    name: "BIG DUCK",
-    captain: "Dana",
-    winner: KYLE,
-    players: [KYLE, EVA, MARY, CHRISSY, JUSTIN, CEDREK],
-  },
-  {
-    name: "Survivor 2025",
-    captain: "Thomas",
-    winner: CHRISSY,
-    players: [CHRISSY, JOE, SAI, STAR, STEPHANIE, BIANCA],
-  },
-  {
-    name: "Boinko's Brats",
-    captain: "Dan",
-    winner: EVA,
-    players: [EVA, CHARITY, CHRISSY, STAR, DAVID, KYLE],
-  },
-  {
-    name: "Q's 6",
-    captain: "Ryan Lemay",
-    winner: MITCH,
-    players: [MITCH, KYLE, JOE, MARY, STAR, BIANCA],
-  },
-  {
-    name: "Ancient Voices",
-    captain: "Elana",
-    winner: CHARITY,
-    players: [CHARITY, CEDREK, DAVID, JUSTIN, STEPHANIE, CHRISSY],
-  },
-  {
-    name: "Play Your Idol",
-    captain: "Elizabeth",
-    winner: MARY,
-    players: [MARY, KYLE, CEDREK, KAMILLA, BIANCA, EVA],
-  },
-  {
-    name: "Come On In Guys",
-    captain: "Spen",
-    winner: MITCH,
-    players: [MITCH, EVA, MARY, CHRISSY, CEDREK, BIANCA],
-  },
-  {
-    name: "Ogatally Devotes",
-    captain: "Andy & Lally",
-    winner: KEVIN,
-    players: [KEVIN, DAVID, EVA, CEDREK, STEPHANIE, CHARITY],
-  },
-  {
-    name: "Got Nothin' For Ya",
-    captain: "Leila",
-    winner: CHRISSY,
-    players: [CHRISSY, SAI, SHAUHIN, MARY, THOMAS, KAMILLA],
-  },
-  {
-    name: "The Noob",
-    captain: "Fekre",
-    winner: CHARITY,
-    players: [CHARITY, MARY, CHRISSY, STEPHANIE, EVA, KEVIN],
-  },
-  {
-    name: "Clyde's Castaways",
-    captain: "Taylor",
-    winner: KAMILLA,
-    players: [KAMILLA, CEDREK, MARY, CHRISSY, EVA, CHARITY],
-  },
-  {
-    name: "TRACKS",
-    captain: "Ally",
-    winner: JOE,
-    players: [JOE, CHARITY, DAVID, JUSTIN, BIANCA, SAI],
-  },
-  {
-    name: "LIVIN'",
-    captain: "Leigh",
-    winner: CHRISSY,
-    players: [CHRISSY, SHAUHIN, BIANCA, JOE, KYLE, CEDREK],
-  },
-  {
-    name: "With You 100%",
-    captain: "Jacob",
-    winner: MARY,
-    players: [MARY, CHRISSY, SAI, BIANCA, KAMILLA, MITCH],
-  },
-  {
-    name: "JSpenny",
-    captain: "Jacklyn",
-    winner: MARY,
-    players: [MARY, KAMILLA, CHARITY, EVA, THOMAS, CEDREK],
-  },
-  {
-    name: "House of Vidmar",
-    captain: "Menard",
-    winner: BIANCA,
-    players: [BIANCA, KYLE, KEVIN, MARY, CHRISSY, CHARITY],
-  },
-  {
-    name: "Fight For It?",
-    captain: "Kian & Katie",
-    winner: MARY,
-    players: [MARY, CEDREK, SHAUHIN, DAVID, EVA, KAMILLA],
-  },
-  {
-    name: "NO SPOILERS",
-    captain: "Brendan",
-    accolades: {
-      third: [45],
-    },
-    winner: BIANCA,
-    players: [BIANCA, THOMAS, SHAUHIN, MARY, KAMILLA, KYLE],
-  },
-  {
-    name: "AA Team",
-    captain: "Alyssa & Adam",
-    winner: MARY,
-    players: [MARY, BIANCA, KAMILLA, THOMAS, JUSTIN, EVA],
-  },
-  {
-    name: "Jer-iatrics",
-    captain: "Jeremy",
-    winner: CHARITY,
-    players: [CHARITY, THOMAS, SHAUHIN, STEPHANIE, CHRISSY, MARY],
-  },
-  {
-    name: "S.A.D",
-    captain: "Susan, Andrea & Diego",
-    winner: MARY,
-    players: [MARY, CHRISSY, CEDREK, KYLE, EVA, KAMILLA],
+    players: [],
+    winner: SAI,
   },
 ];
+
+console.log(
+  teams.reduce(
+    (acc, team) => {
+      acc[
+        team.players
+          .map((p) => p.name)
+          .sort()
+          .join(",")
+      ] =
+        (acc[
+          team.players
+            .map((p) => p.name)
+            .sort()
+            .join(",")
+        ] || 0) + 1;
+      return acc;
+    },
+
+    {}
+  )
+);
 
 export function computeTeamScore(team: Team, weekNumber: number) {
   let score = 0;
