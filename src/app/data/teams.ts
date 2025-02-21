@@ -125,7 +125,7 @@ export const teams: Array<Team> = [
     accolades: {
       second: [44],
     },
-    players: [STAR, DAVID],
+    players: [STAR, DAVID, KAMILLA, CEDREK, SAI, STEPHANIE],
     winner: STAR,
   },
   {
@@ -310,23 +310,20 @@ export const teams: Array<Team> = [
     winner: SAI,
   },
   {
-    captain: "Dean",
-    name: "Dean's Late Team",
+    captain: "Dean & Anne",
+    name: "D's Sss and A's Winners",
     accolades: {
-      first: [44],
+      first: [44, 45],
       third: [45],
     },
-    players: [],
-    winner: SAI,
+    players: [STEPHANIE, SAI, SHAUHIN, BIANCA, CHRISSY, JOE],
+    winner: JOE,
   },
   {
-    captain: "Anne",
-    name: "Challenge Beasts",
-    accolades: {
-      first: [45],
-    },
-    players: [],
-    winner: SAI,
+    captain: "Jeremy",
+    name: "Jer-iatrics",
+    players: [KYLE, BIANCA, JOE, STAR, CHARITY, MITCH],
+    winner: JOE,
   },
 ];
 

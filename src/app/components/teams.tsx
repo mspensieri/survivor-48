@@ -47,6 +47,11 @@ const styles = {
     fontSize: "20pt",
     marginBottom: "20px",
   },
+  teamNameSmall: {
+    fontSize: "17pt",
+    paddingBottom: "5px",
+    marginBottom: "20px",
+  },
   captain: {
     marginTop: "-5px",
     marginBottom: "20px",
@@ -99,10 +104,16 @@ class Teams extends React.Component<{
                   <Card.Title style={styles.cardNumber}>
                     {teamScore.rank === 0 ? "👑" : `#${teamScore.rank + 1}`}{" "}
                   </Card.Title>
-                  <Card.Title style={styles.teamName}>
+                  <Card.Title
+                    style={
+                      teamScore.team.name.length > 21
+                        ? styles.teamNameSmall
+                        : styles.teamName
+                    }
+                  >
                     {teamScore.team.name}
-                    <hr />
                   </Card.Title>
+                  <hr />
                   {/* <Card.Title style={styles.captain}>
                     {teamScore.team.captain}
                   </Card.Title>  */}
