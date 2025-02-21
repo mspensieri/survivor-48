@@ -12,6 +12,7 @@
 :root {
     --link-color: rgb(223, 217, 194);
     --link-color-dark: rgb(114, 111, 86);
+    --link-color-dark-transparent: rgba(114, 111, 86, 0.4);
     --table-accent-color: rgb(196, 192, 167);
     --background-color: rgb(17, 25, 32);
 
@@ -75,8 +76,9 @@
     .nav {
         --bs-nav-link-color: var(--link-color-dark);
         --bs-nav-link-active-color: var(--link-color-dark);
-        --bs-nav-link-disabled-color: #ffffff18;
+        --bs-nav-link-disabled-color: var(--link-color-dark-transparent);
         --bs-nav-link-hover-color: var(--bs-link-color);
+        --bs-border-color: var(--link-color);
     }
 
     .nav-link {
