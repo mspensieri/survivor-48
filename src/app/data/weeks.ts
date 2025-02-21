@@ -12,20 +12,20 @@ export type Points = {
 };
 
 export const airDates = [
-  "Sept 18",
-  "Sept 25",
-  "Oct 2",
-  "Oct 9",
-  "Oct 16",
-  "Oct 23",
-  "Oct 30",
-  "Nov 6",
-  "Nov 13",
-  "Nov 20",
-  "Nov 27",
-  "Dec 4",
-  "Dec 11",
-  "Dec 18",
+  "Feb 26",
+  "Mar 5",
+  "Mar 12",
+  "Mar 19",
+  "Mar 26",
+  "Apr 2",
+  "Apr 9",
+  "Apr 16",
+  "Apr 23",
+  "Apr 30",
+  "May 7",
+  "May 14",
+  "May 21",
+  "May 28",
 ];
 
 export const weeks: Array<Partial<Record<PlayerKeys, Points>>> = [{}];
