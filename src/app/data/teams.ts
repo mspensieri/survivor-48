@@ -325,6 +325,12 @@ export const teams: Array<Team> = [
     players: [KYLE, BIANCA, JOE, STAR, CHARITY, MITCH],
     winner: JOE,
   },
+  {
+    captain: "Jessie",
+    name: "Blindside Kings",
+    players: [JUSTIN, CHARITY, KEVIN, KYLE, JOE, STEPHANIE],
+    winner: KEVIN,
+  },
 ];
 
 export function computeTeamScore(team: Team, weekNumber: number) {
