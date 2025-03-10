@@ -207,7 +207,7 @@ class Scores extends React.Component<{
                 {thisWeekScore.total! === 0 && <>No points earned yet :(</>}
                 {thisWeekScore.points.survival! > 0 && (
                   <>
-                    <strong>Days survived: </strong>
+                    <strong>Survived: </strong>
                     {getScore("survival")}
                     <br />{" "}
                   </>
@@ -249,7 +249,7 @@ class Scores extends React.Component<{
                 )}
                 {thisWeekScore.points.voteNullified! > 0 && (
                   <>
-                    <strong>Idol played: </strong>
+                    <strong>Votes nullified: </strong>
                     {getScore("voteNullified")}
                     <br />
                   </>
