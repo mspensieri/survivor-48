@@ -78,7 +78,8 @@ export const PLAYERS: Record<PlayerKeys, Player> = {
   [PlayerKeys.THOMAS]: {
     key: PlayerKeys.THOMAS,
     name: "Thomas",
-    status: "active",
+    status: "eliminated",
+    eliminatedWeek: 3,
   },
   [PlayerKeys.KEVIN]: {
     key: PlayerKeys.KEVIN,
