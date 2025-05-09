@@ -550,6 +550,37 @@ export const weeks: Array<Partial<Record<PlayerKeys, Points>>> = [
       placement: 2,
     },
   },
+  {
+    MARY: {
+      survival: 1,
+      placement: 2,
+    },
+    KAMILLA: {
+      survival: 1,
+      votes: 1,
+      individualImmunity: 2,
+    },
+    KYLE: {
+      survival: 1,
+      votes: 1,
+    },
+    MITCH: {
+      survival: 1,
+      votes: 1,
+    },
+    EVA: {
+      survival: 1,
+      votes: 1,
+    },
+    JOE: {
+      survival: 1,
+      votes: 1,
+    },
+    SHAUHIN: {
+      survival: 1,
+      votes: 1,
+    },
+  },
 ];
 
 export function computePlayerScore(
