@@ -25,7 +25,6 @@ export const airDates = [
   "May 7",
   "May 14",
   "May 21",
-  "May 28",
 ];
 
 export const weeks: Array<Partial<Record<PlayerKeys, Points>>> = [
@@ -605,6 +604,35 @@ export const weeks: Array<Partial<Record<PlayerKeys, Points>>> = [
     SHAUHIN: {
       survival: 1,
       placement: 2,
+    },
+  },
+  {
+    KAMILLA: {
+      survival: 2,
+      individualImmunity: 2,
+      votes: 1,
+      placement: 5,
+    },
+    KYLE: {
+      survival: 3,
+      votes: 1,
+      individualImmunity: 2,
+      placement: 10,
+    },
+    MITCH: {
+      survival: 1,
+      placement: 3,
+    },
+    EVA: {
+      survival: 3,
+      votes: 1,
+      advantage: 1,
+      placement: 9,
+    },
+    JOE: {
+      survival: 3,
+      votes: 1,
+      placement: 7,
     },
   },
 ];

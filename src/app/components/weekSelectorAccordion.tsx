@@ -64,7 +64,7 @@ class WeekSelectorAccordion extends React.Component<
         <Accordion.Item eventKey="0">
           <Accordion.Header>{airDates[selectedWeek]}</Accordion.Header>
           <Accordion.Body>
-            {[...Array(14)].map((_, index) => {
+            {[...Array(13)].map((_, index) => {
               const weekNumber = index;
               const disabled = currentWeek < weekNumber + 1;
 
@@ -72,7 +72,7 @@ class WeekSelectorAccordion extends React.Component<
                 <div
                   style={{
                     ...styles.weekButtonContainer,
-                    ...(weekNumber === 13 && {
+                    ...(weekNumber === 12 && {
                       borderBottom: "0.1em solid var(--bs-link-color)",
                     }),
                   }}

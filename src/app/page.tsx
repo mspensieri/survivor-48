@@ -203,7 +203,7 @@ function Page() {
               id="week-selector-leaderboard"
               className="mb-3"
             >
-              {[...Array(14)].map((_, index) => {
+              {[...Array(13)].map((_, index) => {
                 const weekNumber = index;
                 const disabled = currentWeek < weekNumber + 1;
                 return (
@@ -240,7 +240,7 @@ function Page() {
               id="week-selector-players"
               className="mb-3"
             >
-              {[...Array(14)].map((_, index) => {
+              {[...Array(13)].map((_, index) => {
                 const weekNumber = index;
                 const disabled = currentWeek < weekNumber + 1;
                 return (
